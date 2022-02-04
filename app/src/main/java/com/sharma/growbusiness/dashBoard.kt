@@ -85,6 +85,11 @@ purchase_btn.setOnClickListener {
     startActivity(intent)
 }
 
+        SearchButton.setOnClickListener {
+val intent=Intent(this,SearchActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun delete_task(input: sales_entity) {

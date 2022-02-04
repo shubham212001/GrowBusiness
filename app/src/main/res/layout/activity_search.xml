@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9F9"
+    android:backgroundTint="#FAFAFA"
+    tools:context=".SearchActivity">
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="58dp"
+        android:layout_height="27dp"
+        android:text="QTY"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="328dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <TextView
+        android:layout_width="58dp"
+        android:layout_height="27dp"
+        android:text="Item ID"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="71dp"
+        android:layout_height="25dp"
+        android:text="Item Name"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="318dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="71dp"
+        android:layout_height="25dp"
+        android:text="Item Price"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="318dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="77dp"
+        android:layout_height="38dp"
+        android:text="Bill No"
+        android:textColor="#148E3C"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="81dp"
+        android:layout_height="49dp"
+        android:text="Bill No"
+        android:textColor="#148E3C"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Bill Items Details"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/searchInput"
+        android:layout_width="202dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter Bill no"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+    <ImageButton
+        android:id="@+id/SearchBtn"
+        android:layout_width="81dp"
+        android:layout_height="45dp"
+        app:srcCompat="@drawable/ic_baseline_search_24"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="54dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler"
+        android:layout_width="413dp"
+        android:layout_height="382dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="113dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

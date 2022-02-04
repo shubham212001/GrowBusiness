@@ -3,8 +3,10 @@ package com.sharma.growbusiness
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_add_purchase.*
+import kotlinx.android.synthetic.main.activity_purchase.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -30,7 +32,7 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
         val db by lazy {
             task_database.getDatabase(this)
         }
-
+     
         save_purchase_bill.setOnClickListener {
             var bill_no_variable = bill_no.text.toString()
             var cust_name_variable = cust_name.text.toString()

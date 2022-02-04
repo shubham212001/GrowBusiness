@@ -26,6 +26,13 @@ public interface dao {
     @Query("Select * from PurchaseTable order by EntryIdPur DESC")
     fun get_all_purchase(): LiveData<List<purchase_entity>>
 
+    @Query("Select * from PurchaseItemsTable order by Entry_no_purchase_item DESC")
+    fun get_all_purchase_items(): LiveData<List<puchase_item_entity>>
+
+    //get_search_sale_item
+    @Query("Select * from ItemsTable ")
+    fun get_search_sale_item(): LiveData<List<item>>
+
 //        @Query("Select * from entity order by id ASC")
 //        fun get_all1(): LiveData<List<entity>>
 
