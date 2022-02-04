@@ -23,7 +23,7 @@ var temp=searchInput.text.toString()
             var Adapter =search_recycler.adapter
             search_recycler.adapter=adapter
 
-            db.todoDao().get_search_sale_item().observe(this, Observer {
+            db.todoDao().get_search_sale_item(temp).observe(this, Observer {
 
                 list.clear()
                 list.addAll(it)

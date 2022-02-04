@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/sale_nop"
-        android:layout_width="114dp"
-        android:layout_height="42dp"
+        android:layout_width="93dp"
+        android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:text="TextView"
         android:textAlignment="center"
@@ -31,12 +31,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.689" />
 
     <TextView
         android:id="@+id/sale_id"
-        android:layout_width="107dp"
-        android:layout_height="41dp"
+        android:layout_width="91dp"
+        android:layout_height="29dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -49,16 +49,16 @@
 
     <TextView
         android:id="@+id/salePrice"
-        android:layout_width="101dp"
-        android:layout_height="42dp"
+        android:layout_width="87dp"
+        android:layout_height="27dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="@+id/sale_nop"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.607" />
 </androidx.constraintlayout.widget.ConstraintLayout>
