@@ -44,4 +44,10 @@ public interface dao {
     suspend fun delete_single_item(input: item)
     @Update
     suspend fun update_task(input: sales_entity)
+
+    @Query("Select Customer_Id from ItemsTable where bill_no=:input")
+    fun getCustomerID(input:String): item
+
+    @Query("Select Customer_Name from ItemsTable where bill_no=:input")
+    fun getCustomerName(input:String): item
 }

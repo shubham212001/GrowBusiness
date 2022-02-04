@@ -31,6 +31,10 @@ var temp=searchInput.text.toString()
 
 
             })
+            var cust_id_from_dao_function=db.todoDao().getCustomerID(temp)
+            search_customer_id.setText(""+cust_id_from_dao_function)
+            var cust_name_from_dao_function=db.todoDao().getCustomerName(temp)
+            SearchCustomerName.setText(""+cust_name_from_dao_function)
         }
     }
 }
