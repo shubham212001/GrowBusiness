@@ -80,7 +80,7 @@
         app:srcCompat="@drawable/save_button_symbol" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/create_newButton"
+        android:id="@+id/purchase_btn"
         android:layout_width="115dp"
         android:layout_height="54dp"
         android:layout_alignParentRight="true"
@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="0.262" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/add_sale_button"
+        android:id="@+id/add_purchase_button"
         android:layout_width="99dp"
         android:layout_height="43dp"
         android:layout_alignParentRight="true"
@@ -190,7 +190,7 @@
         app:layout_constraintVertical_bias="0.396" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sales_recycler"
+        android:id="@+id/purchase_recycler"
         android:layout_width="410dp"
         android:layout_height="421dp"
         android:layout_marginTop="2dp"

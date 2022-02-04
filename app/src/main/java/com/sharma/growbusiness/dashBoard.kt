@@ -29,10 +29,24 @@ open class dashBoard : AppCompatActivity(),listener {
         val data3 = pref.getString("CompanyName", null)
         //dashboard.setText(data3)
 
+//
+//        sales_recycler.layoutManager= LinearLayoutManager(this)
+//        var Adapter =sales_recycler.adapter
+//        sales_recycler.adapter=adapter
+//
+//        db.todoDao().get_all().observe(this, Observer {
+//
+//            list.clear()
+//            list.addAll(it)
+//            adapter.notifyDataSetChanged()
+//
+//
+//        })
 
-        sales_recycler.layoutManager= LinearLayoutManager(this)
-        var Adapter =sales_recycler.adapter
-        sales_recycler.adapter=adapter
+
+        purchase_recycler.layoutManager= LinearLayoutManager(this)
+        var Adapter =purchase_recycler.adapter
+        purchase_recycler.adapter=adapter
 
         db.todoDao().get_all().observe(this, Observer {
 
@@ -44,17 +58,15 @@ open class dashBoard : AppCompatActivity(),listener {
         })
 
 
-add_sale_button.setOnClickListener {
+add_purchase_button.setOnClickListener {
     val intent=Intent(this,AddSalesActivity::class.java)
     startActivity(intent)
 }
 
-
-
-
-
-
-
+        purchase_btn.setOnClickListener {
+            val intent=Intent(this,Add_PurchaseActivity::class.java)
+            startActivity(intent)
+        }
         saveChanges.setOnClickListener {
             var temp1: String = tocollect.text.toString()
             var temp2: String = topay.text.toString()
@@ -68,8 +80,8 @@ add_sale_button.setOnClickListener {
                 Toast.LENGTH_SHORT
             ).show()
         }
-create_newButton.setOnClickListener {
-    val intent=Intent(this,navigation::class.java)
+purchase_btn.setOnClickListener {
+    val intent=Intent(this,PurchaseActivity::class.java)
     startActivity(intent)
 }
 

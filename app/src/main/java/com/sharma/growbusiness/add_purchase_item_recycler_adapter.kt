@@ -4,16 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.add_purchase_item_in_recyclerview.view.*
 
-import kotlinx.android.synthetic.main.add_sales_item_in_recyclerview.view.*
-
-class add_sales_item_recycler_adapter(val list: List<item>,val ItemListener:item_listener) : RecyclerView.Adapter<add_sales_item_recycler_adapter.TodoViewHolder>() {
+class add_purchase_item_recycler_adapter(val list: List<puchase_item_entity>,val PurItemListener:purchase_item_listener) : RecyclerView.Adapter<add_purchase_item_recycler_adapter.TodoViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.add_sales_item_in_recyclerview, parent, false)
+                LayoutInflater.from(parent.context)
+                        .inflate(R.layout.add_purchase_item_in_recyclerview, parent, false)
         )
     }
 
@@ -31,7 +30,7 @@ class add_sales_item_recycler_adapter(val list: List<item>,val ItemListener:item
 //            Listener.update_task(list[position])
 //        }
         holder.itemView.del_item_button_purchase.setOnClickListener {
-            ItemListener.delete_task(list[position])
+            PurItemListener.delete_purchase_item(list[position])
         }
 
     }
@@ -39,11 +38,11 @@ class add_sales_item_recycler_adapter(val list: List<item>,val ItemListener:item
 
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(todoModel: item) {
+        fun bind(todoModel: puchase_item_entity) {
             with(itemView) {
-                show_item_id.text = todoModel.Item_Id.toUpperCase()
-                show_item_qty.text = todoModel.No_of_purchase.toString().toUpperCase()
-                show_item_price.text = todoModel.item_selling_price.toString().toUpperCase()
+                show_item_id.text = todoModel.Item_Id_purchase_item.toUpperCase()
+                show_item_qty.text = todoModel.No_of_purchase_purchase_item.toString().toUpperCase()
+                show_item_price.text = todoModel.item_selling_price_purchase_item.toString().toUpperCase()
 //                user_date.text = todoModel.date
 //                user_time.text = todoModel.time
 
@@ -53,8 +52,8 @@ class add_sales_item_recycler_adapter(val list: List<item>,val ItemListener:item
     }
 
 }
-interface item_listener {
-    fun delete_task(input:item)
+interface purchase_item_listener {
+    fun delete_purchase_item(input:puchase_item_entity)
     fun share(input:sales_entity)
     fun update_task(input: sales_entity)
 

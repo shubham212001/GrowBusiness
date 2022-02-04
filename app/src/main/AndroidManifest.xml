@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GrowBusiness">
-        <activity android:name=".AddSalesActivity"></activity>
+        <activity android:name=".PurchaseActivity"></activity>
+        <activity android:name=".Add_PurchaseActivity" />
+        <activity android:name=".temp_item_activity" />
+        <activity android:name=".AddSalesActivity" />
         <activity android:name=".navigation" />
         <activity android:name=".dashBoard" />
         <activity android:name=".MainActivity">

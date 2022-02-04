@@ -4,22 +4,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.sales_item.view.*
+import kotlinx.android.synthetic.main.purchase_item_layout.view.*
 
-class sales_adapter(val list: List<sales_entity>,val Listener:listener) : RecyclerView.Adapter<sales_adapter.TodoViewHolder>() {
+
+class purchaseAdapter(val Purlist: List<purchase_entity>,val Listener:Purlistener) : RecyclerView.Adapter<purchaseAdapter.TodoViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.sales_item, parent, false)
+                .inflate(R.layout.purchase_item_layout, parent, false)
         )
     }
 
-    override fun getItemCount() = list.size
+    override fun getItemCount() = Purlist.size
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(Purlist[position])
 //        holder.itemView.delete.setOnClickListener {
 //            Listener.delete_task(list[position])
 //        }
@@ -38,11 +39,11 @@ class sales_adapter(val list: List<sales_entity>,val Listener:listener) : Recycl
 
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(todoModel: sales_entity) {
+        fun bind(todoModel: purchase_entity) {
             with(itemView) {
-                sale_nop.text = todoModel.PartyName.toUpperCase()
-                sale_id.text = todoModel.Billno.toString().toUpperCase()
-                salePrice.text = todoModel.PayAmt.toString().toUpperCase()
+                sale_nop.text = todoModel.PartyNamePur.toUpperCase()
+                sale_id.text = todoModel.BillnoPur.toString().toUpperCase()
+                salePrice.text = todoModel.PayAmtPur.toString().toUpperCase()
 //                user_date.text = todoModel.date
 //                user_time.text = todoModel.time
 
@@ -67,9 +68,9 @@ class sales_adapter(val list: List<sales_entity>,val Listener:listener) : Recycl
 
 }
 
-interface listener {
-    fun delete_task(input:sales_entity)
-    fun share(input:sales_entity)
-    fun update_task(input: sales_entity)
+interface Purlistener {
+    fun delete_purchase(input:purchase_entity)
+    fun share(input:purchase_entity)
+    fun update_task(input: purchase_entity)
 
 }
