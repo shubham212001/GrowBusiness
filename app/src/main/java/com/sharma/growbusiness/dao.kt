@@ -46,8 +46,8 @@ public interface dao {
     suspend fun update_task(input: sales_entity)
 
     @Query("Select Customer_Id from ItemsTable where bill_no=:input")
-    fun getCustomerID(input:String): item
+    fun getCustomerID(input:String): String
 
     @Query("Select Customer_Name from ItemsTable where bill_no=:input")
-    fun getCustomerName(input:String): item
+    fun getCustomerName(input:String): String
 }

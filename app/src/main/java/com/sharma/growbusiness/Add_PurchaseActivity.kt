@@ -65,7 +65,7 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
         var item_id_variable = item_id.text.toString()
         var item_qty_variable = nop.text.toString()
         var item_price_variable = item_price.text.toString()
-        var collective_item_data = item(bill_no_variable, item_id_variable, customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
+
 
 
 
