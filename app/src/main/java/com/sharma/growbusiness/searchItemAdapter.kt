@@ -44,6 +44,7 @@ class searchItemAdapter(val list: List<item>) : RecyclerView.Adapter<searchItemA
                 SearchItemID.text = todoModel.Item_Id.toUpperCase()
                 SearchItemName.text = todoModel.Customer_Id.toString().toUpperCase()
                 SearchItemPrice.text = todoModel.No_of_purchase.toString().toUpperCase()
+                SearchItemQTY.text = todoModel.item_selling_price.toString().toUpperCase()
 
 //                user_date.text = todoModel.date
 //                user_time.text = todoModel.time

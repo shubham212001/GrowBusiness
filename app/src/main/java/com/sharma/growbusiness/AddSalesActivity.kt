@@ -60,8 +60,9 @@ class AddSalesActivity : AppCompatActivity(),item_listener {
         var cust_name_variable = cust_name.text.toString()
         var item_id_variable = item_id.text.toString()
         var item_qty_variable = nop.text.toString()
+        var item_name_variable = item_name.text.toString()
         var item_price_variable = item_price.text.toString()
-        var collective_item_data = item(bill_no_variable, item_id_variable, customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
+        var collective_item_data = item(bill_no_variable, item_id_variable,item_name_variable,customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
 
 
 
@@ -74,7 +75,7 @@ class AddSalesActivity : AppCompatActivity(),item_listener {
             var item_id_variable = item_id.text.toString()
             var item_qty_variable = nop.text.toString()
             var item_price_variable = item_price.text.toString()
-            var collective_item_data = item(bill_no_variable, item_id_variable, customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
+            var collective_item_data = item(bill_no_variable, item_id_variable,item_name_variable, customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
             if(!item_price_variable.isNullOrEmpty() && !item_qty_variable.isNullOrEmpty()){
                 var amt = Integer.parseInt(item_price_variable)
                 var qty = Integer.parseInt(item_qty_variable)
@@ -87,6 +88,7 @@ class AddSalesActivity : AppCompatActivity(),item_listener {
                     && item_id_variable.length != 0
                     && item_qty_variable.length != 0
                     && item_price_variable.length != 0
+                && item_name_variable.length!=0
             ) {
 
                 GlobalScope.launch(Dispatchers.Main) {
@@ -95,6 +97,7 @@ class AddSalesActivity : AppCompatActivity(),item_listener {
                                 item(
                                         bill_no_variable,
                                         item_id_variable,
+                                    item_name_variable,
                                         customer_ID_variable,
                                         cust_name_variable,
                                         item_qty_variable,

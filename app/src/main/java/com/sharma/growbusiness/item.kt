@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 data class item (
     val bill_no:String,
     val Item_Id:String,
+    val Item_Name:String,
     val Customer_Id:String,
     val Customer_Name:String,
     val No_of_purchase:String,
