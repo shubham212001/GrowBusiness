@@ -8,8 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GrowBusiness">
-        <activity android:name=".SearchPurActivity"></activity>
+        android:theme="@style/Theme.GrowBusiness"
+        android:windowSoftInputMode="adjustResize">
+        <activity android:name=".InitialStartActivity">
+
+
+        </activity>
+        <activity android:name=".SearchPurActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".PurchaseActivity" />
         <activity android:name=".Add_PurchaseActivity" />
@@ -23,6 +28,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

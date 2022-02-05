@@ -3,7 +3,6 @@ package com.sharma.growbusiness
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_add_purchase.*
 import kotlinx.android.synthetic.main.activity_purchase.*
@@ -36,7 +35,7 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
         save_purchase_bill.setOnClickListener {
             var bill_no_variable = bill_no.text.toString()
             var cust_name_variable = cust_name.text.toString()
-            var item_qty_variable = nop.text.toString()
+            var item_qty_variable = gstin.text.toString()
             var item_price_variable = item_price.text.toString()
 
             if (bill_no_variable.length != 0 && cust_name_variable.length != 0 ) {
@@ -63,7 +62,7 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
         var customer_ID_variable = customer_id.text.toString()
         var cust_name_variable = cust_name.text.toString()
         var item_id_variable = item_id.text.toString()
-        var item_qty_variable = nop.text.toString()
+        var item_qty_variable = gstin.text.toString()
         var item_price_variable = item_price.text.toString()
         var collective_item_data = item(bill_no_variable, item_id_variable, customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
 
@@ -76,7 +75,7 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
             var customer_ID_variable = customer_id.text.toString()
             var cust_name_variable = cust_name.text.toString()
             var item_id_variable = item_id.text.toString()
-            var item_qty_variable = nop.text.toString()
+            var item_qty_variable = gstin.text.toString()
             var item_price_variable = item_price.text.toString()
             var collective_item_data = puchase_item_entity(bill_no_variable, item_id_variable, customer_ID_variable, cust_name_variable, item_qty_variable, item_price_variable)
             if (!item_price_variable.isNullOrEmpty() && !item_qty_variable.isNullOrEmpty()) {
@@ -119,7 +118,7 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
             add_item_in_purchase_recyclerview.adapter = adapter
             item_id.setText("")
             item_name.setText("")
-            nop.setText("")
+            gstin.setText("")
             item_price.setText("")
             total_amt.setText("" + pay_variable)
         }

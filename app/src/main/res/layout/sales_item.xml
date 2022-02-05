@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#C53838"
+    android:backgroundTint="#2C33B1">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="407dp"
-        android:layout_height="55dp"
-        android:background="#F6F2F2"
+        android:layout_width="376dp"
+        android:layout_height="76dp"
+        android:background="#813333"
         android:backgroundTint="#FFFFFF"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +24,7 @@
         android:id="@+id/sale_nop"
         android:layout_width="93dp"
         android:layout_height="26dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="28dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -31,21 +32,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <TextView
         android:id="@+id/sale_id"
-        android:layout_width="91dp"
-        android:layout_height="29dp"
+        android:layout_width="110dp"
+        android:layout_height="52dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/salePrice"

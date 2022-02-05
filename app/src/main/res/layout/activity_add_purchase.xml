@@ -215,7 +215,7 @@
                 android:hint="Enter Quantity of Purchase">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nop"
+                    android:id="@+id/gstin"
                     android:layout_width="match_parent"
                     android:layout_height="84dp"
                     android:layout_marginTop="10sp"

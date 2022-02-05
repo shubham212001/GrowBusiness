@@ -26,8 +26,9 @@ open class dashBoard : AppCompatActivity(),listener {
 
         val data2 = pref.getString("ToPay", null)
         topay.setText(data2)
-        val data3 = pref.getString("CompanyName", null)
-        //dashboard.setText(data3)
+
+        val data3 = pref.getString("FirmName", null)
+        firm_name.setText(data3)
 
 //
 //        sales_recycler.layoutManager= LinearLayoutManager(this)

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 //    val intent= Intent(this,MainActivity::class.java)
 //    startActivity(intent)
 //}else{
-            val intent= Intent(this,dashBoard::class.java)
+            val intent= Intent(this,InitialStartActivity::class.java)
             startActivity(intent)
 //}
 
