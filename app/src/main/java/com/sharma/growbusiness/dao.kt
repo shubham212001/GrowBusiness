@@ -30,8 +30,8 @@ public interface dao {
     fun get_all_purchase_items(): LiveData<List<puchase_item_entity>>
 
     //get_search_sale_item
-    @Query("Select * from ItemsTable where bill_no=:input")
-    fun get_search_sale_item(input:String): LiveData<List<item>>
+    @Query("Select * from ItemsTable")
+    fun get_search_sale_item(): LiveData<List<item>>
 
 //        @Query("Select * from entity order by id ASC")
 //        fun get_all1(): LiveData<List<entity>>
@@ -46,8 +46,8 @@ public interface dao {
     suspend fun update_task(input: sales_entity)
 
     @Query("Select Customer_Id from ItemsTable where bill_no=:input")
-    fun getCustomerID(input:String): String
+    fun getCustomerID(input:String): LiveData<String>
 
     @Query("Select Customer_Name from ItemsTable where bill_no=:input")
-    fun getCustomerName(input:String): String
+    fun getCustomerName(input:String): LiveData<String>
 }

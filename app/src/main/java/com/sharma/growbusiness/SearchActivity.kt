@@ -11,34 +11,31 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class SearchActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity(),Search_item_Listener {
     val db by lazy {
         task_database.getDatabase(this)
     }
     val list = arrayListOf<item>()
-    var adapter = searchItemAdapter(list)
+    var adapter = searchItemAdapter(list,this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
         supportActionBar?.hide()
+        SearchBtn.setOnClickListener {
+                var temp=bill_no_input.text.toString()
+                if(temp.length!=0) {
+
+                search_recycler.layoutManager = LinearLayoutManager(this)
+                var Adapter = search_recycler.adapter
+                search_recycler.adapter = adapter
+                db.todoDao().get_search_sale_item().observe(this, Observer {
+
+                    list.clear()
+                    list.addAll(it)
+                    adapter.notifyDataSetChanged()
 
 
-        search_recycler.layoutManager = LinearLayoutManager(this)
-        var Adapter = search_recycler.adapter
-        search_recycler.adapter = adapter
-        db.todoDao().get_search_sale_item("100").observe(this, Observer {
-
-            list.clear()
-            list.addAll(it)
-            adapter.notifyDataSetChanged()
-
-
-        })
-        var temp=bill_no_input.text.toString()
-
-
-            SearchBtn.setOnClickListener {
-//                if(temp.length!=0) {
+                })
 
                 GlobalScope.launch (Dispatchers.IO){
                     var cust_id_from_dao_function = db.todoDao().getCustomerID(temp)
@@ -47,9 +44,13 @@ class SearchActivity : AppCompatActivity() {
                     SearchCustomerName.setText("" + cust_name_from_dao_function)
                 }
 
-//            }else {
-//                    Toast.makeText(this, "Enter Bill No", Toast.LENGTH_SHORT).show()
-//                }
+            }else {
+                    Toast.makeText(this, "Enter Bill No", Toast.LENGTH_SHORT).show()
+                }
         }
+    }
+
+    override fun delete_search(input: String) {
+        TODO("Not yet implemented")
     }
 }

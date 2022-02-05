@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.search_recycler_item_view.view.*
 
 
-class searchItemAdapter(val list: List<item>) : RecyclerView.Adapter<searchItemAdapter.TodoViewHolder>() {
+class searchItemAdapter(val list: List<item>,val SListener:Search_item_Listener) : RecyclerView.Adapter<searchItemAdapter.TodoViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
@@ -42,9 +42,9 @@ class searchItemAdapter(val list: List<item>) : RecyclerView.Adapter<searchItemA
         fun bind(todoModel: item) {
             with(itemView) {
                 SearchItemID.text = todoModel.Item_Id.toUpperCase()
-                SearchItemName.text = todoModel.Customer_Id.toString().toUpperCase()
-                SearchItemPrice.text = todoModel.No_of_purchase.toString().toUpperCase()
-                SearchItemQTY.text = todoModel.item_selling_price.toString().toUpperCase()
+                SearchItemName.text = todoModel.Item_Name.toString().toUpperCase()
+                SearchItemPrice.text = todoModel.item_selling_price.toString().toUpperCase()
+                SearchItemQTY.text = todoModel.No_of_purchase.toString().toUpperCase()
 
 //                user_date.text = todoModel.date
 //                user_time.text = todoModel.time
@@ -68,5 +68,8 @@ class searchItemAdapter(val list: List<item>) : RecyclerView.Adapter<searchItemA
 //        }
     }
 
+}
+interface Search_item_Listener{
+    fun delete_search(input:String)
 }
 
