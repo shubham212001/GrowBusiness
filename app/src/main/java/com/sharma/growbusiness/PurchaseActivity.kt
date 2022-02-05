@@ -37,6 +37,12 @@ class PurchaseActivity : AppCompatActivity(),Purlistener {
 
         })
 
+
+        searchbtn.setOnClickListener {
+            val intent =Intent(this,SearchPurActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun delete_purchase(input: purchase_entity) {
@@ -50,4 +56,6 @@ class PurchaseActivity : AppCompatActivity(),Purlistener {
     override fun update_task(input: purchase_entity) {
         TODO("Not yet implemented")
     }
+
+
 }

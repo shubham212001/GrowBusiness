@@ -135,12 +135,12 @@
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/SearchButton"
         android:layout_width="117dp"
-        android:layout_height="57dp"
+        android:layout_height="52dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|right"
 
-        android:text="    Search Bill"
+        android:text=" Search Sales Bill"
         android:textColorLink="#FFFFFF"
         android:textSize="10sp"
         app:backgroundTint="@color/teal_200"
@@ -149,7 +149,7 @@
         app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.258" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <TextView
         android:id="@+id/textView5"
@@ -194,7 +194,7 @@
         app:layout_constraintVertical_bias="0.396" />
 
     <TextView
-        android:id="@+id/search_button"
+        android:id="@+id/textViewPayment"
         android:layout_width="122dp"
         android:layout_height="29dp"
         android:text="Payment Amount"

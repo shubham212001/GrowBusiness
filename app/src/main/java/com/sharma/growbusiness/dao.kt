@@ -33,9 +33,14 @@ public interface dao {
     @Query("Select * from ItemsTable where bill_no=:input ")
     fun get_search_sale_item(input:String): LiveData<List<item>>
 
+//    @Query("Select * from PurchaseItemsTable where bill_no_purchase_item=:input ")
+//    fun get_search_purchase_item(input:String): LiveData<List<purchase_entity>>
+
 //        @Query("Select * from entity order by id ASC")
 //        fun get_all1(): LiveData<List<entity>>
 
+    @Query("Select * from PurchaseItemsTable where bill_no_purchase_item=:input ")
+    fun get_purchase_sale_item(input:String): LiveData<List<puchase_item_entity>>
     //Query for deletion of an item from the list
     @Delete
     suspend fun delete_task(input: sales_entity)
