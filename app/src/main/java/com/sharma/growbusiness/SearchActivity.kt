@@ -6,6 +6,11 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_purchase.*
 import kotlinx.android.synthetic.main.activity_search.*
+import kotlinx.android.synthetic.main.activity_search.SearchBtn
+import kotlinx.android.synthetic.main.activity_search.searchInput
+import kotlinx.android.synthetic.main.activity_search.search_recycler
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class SearchActivity : AppCompatActivity() {
     val db by lazy {
@@ -31,6 +36,16 @@ var temp=searchInput.text.toString()
 
 
             })
+
+            GlobalScope.launch {
+                var cust_name_received=db.todoDao().get_sale_customer_name(temp)
+                customer_name_shower_sale.setText(""+cust_name_received)
+            }
+
+            GlobalScope.launch {
+                var cust_id_received=db.todoDao().get_sale_customer_id(temp)
+                customer_id_shower_sale.setText(""+cust_id_received)
+            }
         }
     }
 }
