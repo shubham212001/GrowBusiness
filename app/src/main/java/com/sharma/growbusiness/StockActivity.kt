@@ -21,18 +21,19 @@ class StockActivity : AppCompatActivity(),stock_listner {
         stock_recycler.layoutManager= LinearLayoutManager(this)
         var Adapter =stock_recycler.adapter
         stock_recycler.adapter=adapter
-        var pref = applicationContext.getSharedPreferences("MyPref", MODE_PRIVATE)
-        var editor = pref.edit()
-        var all_shared_pref=pref.all
+        var Stockpref = applicationContext.getSharedPreferences("StockPref", MODE_PRIVATE)
+        var editor = Stockpref.edit()
+        var all_shared_pref=Stockpref.all
 
-         for(temp_iterateOverSharedPref in all_shared_pref){
-             var temp_a=temp_iterateOverSharedPref.value.toString()
-             list.add(stockEntity(temp_iterateOverSharedPref.key,temp_a))
-         }
+
         db.todoDao().stock_get_all_items().observe(this, Observer {
 
             list.clear()
-            list.addAll(it)
+            //list.addAll(it)
+            for(temp_iterateOverSharedPref in all_shared_pref){
+                var temp_a=temp_iterateOverSharedPref.value.toString()
+                list.add(stockEntity(temp_iterateOverSharedPref.key,temp_a))
+            }
             adapter.notifyDataSetChanged()
 
 

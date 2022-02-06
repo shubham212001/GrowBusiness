@@ -29,7 +29,9 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
         setContentView(R.layout.activity_add_purchase)
         supportActionBar?.hide()
         var pref = applicationContext.getSharedPreferences("MyPref", MODE_PRIVATE)
+        var stock_pref = applicationContext.getSharedPreferences("StockPref", MODE_PRIVATE)
         var editor = pref.edit()
+        var editor2 = stock_pref.edit()
 
         var pay_variable = 0;
 
@@ -200,11 +202,13 @@ class Add_PurchaseActivity : AppCompatActivity(),purchase_item_listener {
 //            }
 //            //Showing the toast
 //            Toast.makeText(this, "Stock Updated", Toast.LENGTH_SHORT).show()
-            var temp=pref.getString(item_id_variable,"0")
-            val temp_addition=Integer.parseInt(temp)
-            val final_pass_variable=temp+Integer.parseInt(item_qty_variable).toString()
-            editor.putString(item_id_variable,final_pass_variable)
-            editor.apply()
+            var prev_value=stock_pref.getString(item_id_variable,"0")
+            var prev_value_converison=Integer.parseInt(prev_value)
+            val final_pass_variable:Int=prev_value_converison+Integer.parseInt(item_qty_variable)
+            var finalPassValueInString=final_pass_variable.toString()
+            stock_pref.edit().remove(item_id_variable).commit();
+            editor2.putString(item_id_variable,finalPassValueInString)
+            editor2.apply()
             Toast.makeText(this, "Stock Updated", Toast.LENGTH_SHORT).show()
 
        }
