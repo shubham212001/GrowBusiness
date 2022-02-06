@@ -10,10 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrowBusiness"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".InitialStartActivity">
-
-
-        </activity>
+        <activity android:name=".StockActivity"></activity>
+        <activity android:name=".InitialStartActivity"></activity>
         <activity android:name=".SearchPurActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".PurchaseActivity" />
@@ -28,7 +26,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

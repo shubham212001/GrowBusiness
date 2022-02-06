@@ -3,6 +3,8 @@ package com.sharma.growbusiness
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import java.util.logging.LogManager
+
 @Dao
 public interface dao {
 
@@ -26,7 +28,7 @@ public interface dao {
     @Query("Select * from PurchaseTable order by EntryIdPur DESC")
     fun get_all_purchase(): LiveData<List<purchase_entity>>
 
-    @Query("Select * from PurchaseItemsTable order by Entry_no_purchase_item DESC")
+    @Query("Select * from PurchaseItemsTable ")
     fun get_all_purchase_items(): LiveData<List<puchase_item_entity>>
 
     //get_search_sale_item
@@ -60,6 +62,41 @@ public interface dao {
     //delete_single_item
     @Delete
     suspend fun delete_single_item(input: item)
+//    @Delete
+//    suspend fun delete_purchase_item(input: puchase_item_entity)
+    @Delete
+suspend fun delete_purchase_item(input:puchase_item_entity)
+
     @Update
     suspend fun update_task(input: sales_entity)
+
+    @Insert
+    suspend fun stock_add_item(input: stockEntity): Long
+
+    @Query("Update StockTable set StockItemQTY=:input1 where StockItemID=:input2" )
+    suspend fun stock_update(input1: String ,input2:String)
+
+    @Query("Select * from  StockTable")
+    fun stock_get_all_items():LiveData<List<stockEntity>>
+
+    @Query("Select * from  StockTable where StockItemID=:input")
+    fun stock_get_particular_item(input: String):stockEntity
+
+    //If this thing returns null means it is the first time item being added
+//    @Query("Select StockItemQTY from StockTable where StockItemID=:input")
+//    suspend fun check_if_stock_already_in_database(input:String):List<stockStatusEntity>
+//
+//    //Query for inserting into stock table
+//    @Insert
+//    suspend fun InsertIntoStock()
+//
+//    //Query to get the just previous stock value for that particular item id
+//    @Query("select StockItemQTY from StockTable where StockItemID=:input_item_id")
+//    suspend fun get_previous_stock_value_for_updation_in_next_method_call_query(input_item_id:String)
+//
+//    //Query to update the record by using purchase items
+//    @Query("Update StockTable set StockItemQTY=:quantity_to_be_added where StockItemID=:input_item_id")
+//    suspend fun update_stock_after_purchasing(quantity_to_be_added:String,input_item_id:String)
+
+
 }

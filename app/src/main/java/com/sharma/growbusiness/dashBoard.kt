@@ -22,7 +22,7 @@ open class dashBoard : AppCompatActivity(),listener {
         var pref = applicationContext.getSharedPreferences("MyPref", MODE_PRIVATE)
         var editor = pref.edit()
         val data1 = pref.getString("ToCollect", null)
-        tocollect.setText(data1)
+        //tocollect.setText(data1)
 
         val data2 = pref.getString("ToPay", null)
         topay.setText(data2)
@@ -53,34 +53,49 @@ open class dashBoard : AppCompatActivity(),listener {
 
             list.clear()
             list.addAll(it)
+            var temp_total=0
+            for(temp_item_total in list){
+                temp_total+=Integer.parseInt(temp_item_total.PayAmt.toString())
+            }
+            tocollect.setText(""+temp_total)
             adapter.notifyDataSetChanged()
 
 
         })
 
 
+
 add_purchase_button.setOnClickListener {
     val intent=Intent(this,AddSalesActivity::class.java)
     startActivity(intent)
 }
+        stock_activity_btn.setOnClickListener {
+            val intent=Intent(this,StockActivity::class.java)
+            startActivity(intent)
+        }
 
         purchase_btn.setOnClickListener {
             val intent=Intent(this,Add_PurchaseActivity::class.java)
             startActivity(intent)
         }
-        saveChanges.setOnClickListener {
-            var temp1: String = tocollect.text.toString()
-            var temp2: String = topay.text.toString()
 
-            editor.putString("ToCollect", temp1);
-            editor.putString("ToPay", temp2);
-            editor.apply();
-            Toast.makeText(
-                applicationContext,
-                "To Collect and To Pay Data Saved",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+
+        //The below code is for save button
+
+
+//        saveChanges.setOnClickListener {
+//            var temp1: String = tocollect.text.toString()
+//            var temp2: String = topay.text.toString()
+//
+//            editor.putString("ToCollect", temp1);
+//            editor.putString("ToPay", temp2);
+//            editor.apply();
+//            Toast.makeText(
+//                applicationContext,
+//                "To Collect and To Pay Data Saved",
+//                Toast.LENGTH_SHORT
+//            ).show()
+//        }
 purchase_btn.setOnClickListener {
     val intent=Intent(this,PurchaseActivity::class.java)
     startActivity(intent)
@@ -90,6 +105,16 @@ purchase_btn.setOnClickListener {
 val intent=Intent(this,SearchActivity::class.java)
             startActivity(intent)
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Write your code here
+        var pref = applicationContext.getSharedPreferences("MyPref", MODE_PRIVATE)
+        var editor = pref.edit()
+        val updated_to_pay_data = pref.getString("ToPay", null)
+        topay.setText(updated_to_pay_data)
 
     }
 

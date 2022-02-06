@@ -7,19 +7,21 @@
     android:backgroundTint="#4CAF41"
     tools:context=".dashBoard">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Collect (INR)"
-        android:textColor="#2F6330"
+    <EditText
+        android:id="@+id/topay"
+        android:layout_width="118dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#AC2525"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.161" />
 
     <TextView
         android:id="@+id/textView3"
@@ -30,10 +32,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Collect (INR)"
+        android:textColor="#2F6330"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
 
     <EditText
         android:id="@+id/tocollect"
@@ -46,39 +62,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <EditText
-        android:id="@+id/topay"
-        android:layout_width="118dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="#AC2525"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <ImageButton
-        android:id="@+id/saveChanges"
-        android:layout_width="73dp"
-        android:layout_height="63dp"
-        android:backgroundTint="#56851F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127"
-        app:srcCompat="@drawable/save_button_symbol" />
+        app:layout_constraintVertical_bias="0.161" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/purchase_btn"
@@ -117,7 +104,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/create_newButton2"
+        android:id="@+id/stock_activity_btn"
         android:layout_width="93dp"
         android:layout_height="54dp"
         android:layout_alignParentRight="true"
@@ -210,8 +197,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/purchase_recycler"
-        android:layout_width="410dp"
-        android:layout_height="421dp"
+        android:layout_width="415dp"
+        android:layout_height="416dp"
         android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

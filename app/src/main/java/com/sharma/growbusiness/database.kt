@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(sales_entity::class,item::class,purchase_entity::class,puchase_item_entity::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(stockEntity::class,sales_entity::class,item::class,purchase_entity::class,puchase_item_entity::class), version = 1, exportSchema = false)
 abstract class task_database : RoomDatabase() {
     abstract fun todoDao(): dao
 

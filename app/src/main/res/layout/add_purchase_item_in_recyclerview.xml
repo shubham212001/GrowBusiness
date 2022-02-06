@@ -3,13 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#FAF6F6"
+    android:backgroundTint="#3E6A2A">
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="381dp"
+        android:layout_height="59dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="411dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/show_item_id"
         android:layout_width="78dp"
         android:layout_height="26dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
         android:text="Item_id"
         android:textSize="18sp"
@@ -28,7 +50,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/show_item_price"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="@+id/show_item_id"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +59,7 @@
         android:layout_width="85dp"
         android:layout_height="26dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="88dp"
         android:text="TextView"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -48,6 +70,7 @@
         android:id="@+id/del_item_button_purchase"
         android:layout_width="50dp"
         android:layout_height="54dp"
+        android:backgroundTint="#5BE83B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.955"

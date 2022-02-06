@@ -20,6 +20,8 @@ class PurchaseActivity : AppCompatActivity(),Purlistener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_purchase)
         supportActionBar?.hide()
+        var pref = applicationContext.getSharedPreferences("MyPref", MODE_PRIVATE)
+        var editor = pref.edit()
         add_purchase_button.setOnClickListener {
             val intent =Intent(this,Add_PurchaseActivity::class.java)
             startActivity(intent)
@@ -32,6 +34,13 @@ class PurchaseActivity : AppCompatActivity(),Purlistener {
 
             list.clear()
             list.addAll(it)
+            var temp_total_pur=0
+            for(temp_item_total in list){
+                temp_total_pur+=Integer.parseInt(temp_item_total.PayAmtPur.toString())
+            }
+           editor.putString("ToPay",""+temp_total_pur)
+           editor.apply()
+            //Testing_to_pay_textview.setText(""+temp_total_pur)
             adapter.notifyDataSetChanged()
 
 
@@ -44,6 +53,8 @@ class PurchaseActivity : AppCompatActivity(),Purlistener {
         }
 
     }
+
+
 
     override fun delete_purchase(input: purchase_entity) {
         TODO("Not yet implemented")
