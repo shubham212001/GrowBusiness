@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlin.math.abs
 
 const val DB_NAME = "todo.db"
 class AddSalesActivity : AppCompatActivity(),item_listener {
@@ -28,7 +29,8 @@ class AddSalesActivity : AppCompatActivity(),item_listener {
         val db by lazy {
             task_database.getDatabase(this)
         }
-
+        var stock_pref = applicationContext.getSharedPreferences("StockPref", MODE_PRIVATE)
+        var editor2 = stock_pref.edit()
         save_purchase_bill.setOnClickListener {
             var bill_no_variable = bill_no.text.toString()
             var cust_name_variable = cust_name.text.toString()
@@ -120,6 +122,16 @@ class AddSalesActivity : AppCompatActivity(),item_listener {
             item_price.setText("")
             total_amt.setText(""+pay_variable)
 
+
+            //Code for stock updation
+            var prev_value=stock_pref.getString(item_id_variable,"0")
+            var prev_value_converison=Integer.parseInt(prev_value)
+            val final_pass_variable:Int= abs(prev_value_converison-Integer.parseInt(item_qty_variable))
+            var finalPassValueInString=final_pass_variable.toString()
+            stock_pref.edit().remove(item_id_variable).commit();
+            editor2.putString(item_id_variable,finalPassValueInString)
+            editor2.apply()
+            Toast.makeText(this, "Stock Updated", Toast.LENGTH_SHORT).show()
         }
     }
 
